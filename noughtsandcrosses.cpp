@@ -1,22 +1,31 @@
+
+//Cpp noughts and crosses
+
+//Include basic cpp libraries
 #include <iostream>
 #include <string>
 
+//select the used namespace
 using namespace std;
 
 //2D array set out in form grid[y][x]
+//This acts as the board for the game
 string grid[3][3] = {
     {"#", "#", "#"},
     {"#", "#", "#"},
     {"#", "#", "#"}
 };
+//set all initial variables
 int xvalue = 0;
+int yvalue = 0;
 bool win = false;
 string winner = "#";
-int yvalue = 0;
 string player = "X";
 
 int displaygrid() {
+    //If compiling for windows use 'cls' below if on linux use 'clear'
     system("cls");
+    //display the grid in current form after clearing the window
     cout << "Naughts and crosses\n";
     cout << "y\n";
     cout << "3 " << grid[2][0] << "|" << grid[2][1] << "|" << grid[2][2] << "\n";
@@ -101,7 +110,8 @@ int verify() {
     }
 }
 
-int main() {
+int main()
+    //run a loop that does not allow the game to be over run and if the winner character has not been changed display a tie message
     int i = 0;
     while(win != true && i < 9) {
         i++;
